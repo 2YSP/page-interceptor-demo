@@ -58,8 +58,8 @@ public class PageInterceptor implements Interceptor {
     final BoundSql boundSql = mappedStatement.getBoundSql(parameter);
     // 获取BoundSql中记录的SQL语句
     String sql = boundSql.getSql();
-    log.info("==========sql:\n" + sql);
     sql = getPagingSql(sql, offset, limit);
+    log.info("==========sql:\n" + sql);
     // 重置RowBounds对象
     args[ROWBOUNDS_INDEX] = new RowBounds(RowBounds.NO_ROW_OFFSET, RowBounds.NO_ROW_LIMIT);
     // 根据当前语句创建新的MappedStatement

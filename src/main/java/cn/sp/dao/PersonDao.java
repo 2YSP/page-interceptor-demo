@@ -7,9 +7,5 @@ import org.apache.ibatis.session.RowBounds;
 
 public interface PersonDao {
 
-  void save(Person person);
-
-  Person queryById(Integer id);
-
   List<Person> queryPersonsByPage(RowBounds rowBounds);
 }
